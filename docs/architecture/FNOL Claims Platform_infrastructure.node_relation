@@ -1,0 +1,123 @@
+{
+    "aws_services": [
+        "AWS API Gateway",
+        "AWS Lambda",
+        "AWS Step Functions",
+        "Amazon DynamoDB",
+        "Amazon RDS",
+        "Amazon S3",
+        "Amazon SQS",
+        "Amazon SNS",
+        "Amazon EventBridge",
+        "Amazon CloudFront",
+        "AWS Amplify",
+        "AWS KMS",
+        "Amazon CloudWatch",
+        "AWS WAF",
+        "Amazon OpenSearch Service"
+    ],
+    "backend": {
+        "nodes": {
+            "Audit_Diary_Manager": [
+                "AWS Lambda",
+                "Amazon DynamoDB"
+            ],
+            "Central_Data_Store": [
+                "Amazon DynamoDB",
+                "Amazon RDS"
+            ],
+            "Communication_Router": [
+                "AWS SNS",
+                "Amazon EventBridge"
+            ],
+            "Intake_Transformation": [
+                "AWS Lambda",
+                "Amazon EventBridge"
+            ],
+            "Policy_Validation": [
+                "AWS Lambda",
+                "Amazon RDS"
+            ],
+            "Portal_API": [
+                "AWS API Gateway",
+                "AWS WAF"
+            ],
+            "Secure_Storage": [
+                "Amazon S3",
+                "AWS KMS"
+            ],
+            "Workflow_Orchestrator": [
+                "AWS Step Functions",
+                "Amazon SQS"
+            ]
+        },
+        "relations": [
+            {
+                "source": "Portal_API",
+                "target": "Intake_Transformation"
+            },
+            {
+                "source": "Intake_Transformation",
+                "target": "Policy_Validation"
+            },
+            {
+                "source": "Policy_Validation",
+                "target": "Workflow_Orchestrator"
+            },
+            {
+                "source": "Workflow_Orchestrator",
+                "target": "Audit_Diary_Manager"
+            },
+            {
+                "source": "Workflow_Orchestrator",
+                "target": "Communication_Router"
+            },
+            {
+                "source": "Intake_Transformation",
+                "target": "Secure_Storage"
+            },
+            {
+                "source": "Audit_Diary_Manager",
+                "target": "Central_Data_Store"
+            },
+            {
+                "source": "Communication_Router",
+                "target": "Central_Data_Store"
+            },
+            {
+                "source": "Secure_Storage",
+                "target": "Central_Data_Store"
+            }
+        ]
+    },
+    "frontend": {
+        "nodes": {
+            "Insured_Portal_UI": [
+                "AWS Amplify",
+                "Amazon CloudFront"
+            ],
+            "Tracking_Interface": [
+                "AWS Amplify",
+                "Amazon CloudFront"
+            ],
+            "Upload_Component": [
+                "AWS Amplify",
+                "AWS API Gateway"
+            ]
+        },
+        "relations": [
+            {
+                "source": "Insured_Portal_UI",
+                "target": "Upload_Component"
+            },
+            {
+                "source": "Insured_Portal_UI",
+                "target": "Tracking_Interface"
+            },
+            {
+                "source": "Upload_Component",
+                "target": "Tracking_Interface"
+            }
+        ]
+    }
+}

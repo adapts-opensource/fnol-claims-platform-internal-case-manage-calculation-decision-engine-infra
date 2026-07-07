@@ -1,0 +1,30 @@
+version: '1.0'
+application_name: FNOL Claims Platform
+package_family: ui_infra_package
+features:
+- label: Internal Case Management:calculation:decision
+  domain: ''
+  description: Planned work for Internal Case Management:calculation:decision.
+  user_stories:
+  - id: US-001
+    title: As a user, I want Internal Case Management:calculation:decision
+    role: user
+    goal: use Internal Case Management:calculation:decision
+    benefit: the delivered package meets requirements
+    persona: ''
+    persona_type: ''
+    trigger: ''
+    story: ''
+    business_value: ''
+    priority: ''
+    preconditions: ''
+    acceptance_criteria:
+    - Deliver Internal Case Management:calculation:decision in the generated package.
+    algorithm_to_be_tested: {}
+    data_dependencies: []
+    audit_or_explainability_needs: []
+    layer_implications: {}
+    sample_test_scenarios: []
+    main_success_flow: []
+    alternate_flows: []
+    exception_flows: []
