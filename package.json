@@ -1,0 +1,26 @@
+{
+    "name": "fnolclaims_platform_iac",
+    "version": "1.0.0",
+    "description": "A short description of the project.",
+    "main": "lib/stack.ts",
+    "scripts": {
+      "build": "tsc",
+      "watch": "tsc -w",
+      "cdk": "cdk",
+      "synth": "cdk synth",
+      "deploy": "cdk deploy",
+      "diff": "cdk diff",
+      "test": "jest"
+    },
+    "dependencies": {
+      "aws-cdk-lib": "^2.0.0",
+      "constructs": "^10.0.0",
+      "@adapts/cdkconstructlib": "^1.0.0"
+    },
+    "devDependencies": {
+      "@types/jest": "^29.0.0",
+      "jest": "^29.0.0",
+      "ts-jest": "^29.0.0",
+      "typescript": "^5.6.0"
+    }
+  }

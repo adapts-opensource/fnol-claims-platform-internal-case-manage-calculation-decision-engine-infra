@@ -1,0 +1,31 @@
+version: '1.0'
+application_name: FNOL Claims Platform
+package_family: infra_arch_design
+features:
+- label: Insured Engagement & Tracking:transformation:validation
+  domain: ''
+  description: Planned work for Insured Engagement & Tracking:transformation:validation.
+  user_stories:
+  - id: US-001
+    title: As a user, I want Insured Engagement & Tracking:transformation:validation
+    role: user
+    goal: use Insured Engagement & Tracking:transformation:validation
+    benefit: the delivered package meets requirements
+    persona: ''
+    persona_type: ''
+    trigger: ''
+    story: ''
+    business_value: ''
+    priority: ''
+    preconditions: ''
+    acceptance_criteria:
+    - Deliver Insured Engagement & Tracking:transformation:validation in the generated
+      package.
+    algorithm_to_be_tested: {}
+    data_dependencies: []
+    audit_or_explainability_needs: []
+    layer_implications: {}
+    sample_test_scenarios: []
+    main_success_flow: []
+    alternate_flows: []
+    exception_flows: []
